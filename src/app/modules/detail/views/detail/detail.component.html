@@ -1,0 +1,28 @@
+<section class="container">
+  <div class="row mb-5">
+    <div class="col-12">
+      <a class="btn btn-outline-primary" routerLink="/overview">Back to List</a>
+    </div>
+    <div class="col-12">
+      <small class="text-muted">Created at {{(issue | async)?.createdAt?.seconds | date : 'long'}}</small>
+    </div>
+  </div>
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" (blur)="saveChanges()" [formControlName]="'title'" class="form-control mb-2" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea rows="3" (blur)="saveChanges()" [formControlName]="'description'" class="form-control mb-2" placeholder="Title"></textarea>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" (change)="saveChanges()" [formControlName]="'done'">
+          <label class="form-check-label">Done?</label>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

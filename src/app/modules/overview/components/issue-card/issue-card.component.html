@@ -1,0 +1,10 @@
+<div class="card" [class.border-success]="issue.data().done">
+  <div class="card-body">
+    <h5 class="card-title">{{issue.data().title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created {{issue.data().createdAt.seconds | date}}</h6>
+    <p class="card-text" *ngIf="issue.data().description">{{issue.data().description}}</p>
+    <a (click)="issueService.toggleIssue(issue)" class="btn btn-outline-success btn-sm" *ngIf="!issue.data().done">Finish</a>
+    <a (click)="issueService.toggleIssue(issue)" class="btn btn-link btn-sm" *ngIf="issue.data().done">Reopen</a>
+    <a class="btn btn-outline-primary btn-sm ml-2" [routerLink]="'/issues/' + issue.id">View issue</a>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<section class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 mb-3 mb-md-0">
+      <expo-issue-list [issues]="issueService.issues | async | filterIssues: 'done' : false" [listTitle]="'Open'"></expo-issue-list>
+    </div>
+    <div class="col-12 col-md-6">
+      <expo-issue-list [issues]="issueService.issues | async | filterIssues: 'done' : true" [listTitle]="'Closed'"></expo-issue-list>
+    </div>
+  </div>
+</section>
