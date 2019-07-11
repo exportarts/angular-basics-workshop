@@ -24,7 +24,9 @@ ng new expo-angular-basics-workshop \ # name of the app
     --style=scss \                    # Use SCSS instead of plain CSS
     --routing                         # Prepare routing
 ```
-
+```
+ng new expo-angular-basics-workshop --prefix=expo --directory=. --skipTests --skipGit --skipInstall --commit=false --style=scss --routing
+```
 More info is available at `https://angular.io/cli/new`.
 
 Since we used `--skipInstall` we will now use yarn to manage and install our
