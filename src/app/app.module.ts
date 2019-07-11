@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminModule } from './modules/admin/admin.module';
 import { DataModule } from './modules/data/data.module';
+import { DetailModule } from './modules/detail/detail.module';
+import { HttpClientExampleModule } from './modules/http-client-example/http-client-example.module';
 import { NavigationModule } from './modules/navigation/navigation.module';
 import { OverviewModule } from './modules/overview/overview.module';
-import { AdminModule } from './modules/admin/admin.module';
-import { DetailModule } from './modules/detail/detail.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailModule } from './modules/detail/detail.module';
     DataModule,
     AngularFireModule.initializeApp(environment.firebase),
     AdminModule,
-    DetailModule
+    DetailModule,
+    HttpClientExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { AdminGuard } from './modules/admin/guards/admin.guard';
 import { AdminComponent } from './modules/admin/views/admin/admin.component';
 import { DetailViewResolver } from './modules/detail/resolvers/detail-view.resolver';
 import { DetailComponent } from './modules/detail/views/detail/detail.component';
+import { HttpClientExampleComponent } from './modules/http-client-example/views/http-client-example/http-client-example.component';
 import { OverviewComponent } from './modules/overview/views/overview/overview.component';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     resolve: {
       issue: DetailViewResolver
     }
+  },
+  {
+    path: 'http-client-example',
+    component: HttpClientExampleComponent
   },
   {
     path: '**',

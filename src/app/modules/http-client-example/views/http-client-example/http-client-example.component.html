@@ -1,0 +1,33 @@
+<section class="container">
+    <div class="row">
+      <div class="col">
+          <h1 class="m-0"><code>GET</code></h1>
+          <small class="mb-2"><code>https://jsonplaceholder.typicode.com/users</code></small>
+          <button class="btn btn-sm btn-primary mb-3" (click)="loadUsers()">Try it</button>
+          <pre>{{users | async | json}}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <h1 class="m-0"><code>GET (with custom headers)</code></h1>
+          <small class="mb-2"><code>https://jsonplaceholder.typicode.com/users</code></small>
+          <button class="btn btn-sm btn-primary mb-3" (click)="loadUsers(true)">Try it</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <h1 class="m-0"><code>POST</code></h1>
+          <small class="mb-2"><code>https://jsonplaceholder.typicode.com/posts</code></small>
+          <button class="btn btn-sm btn-primary mb-3" (click)="addPost()">Try it</button>
+          <pre>{{post | async | json}}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <h1 class="m-0"><code>DELETE</code></h1>
+          <small class="mb-2"><code>https://jsonplaceholder.typicode.com/posts/1</code></small>
+          <button class="btn btn-sm btn-primary mb-3" (click)="deletePost()">Try it</button>
+          <pre>{{deletedPost | async | json}}</pre>
+      </div>
+    </div>
+</section>
