@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,8 @@ import { DetailModule } from './modules/detail/detail.module';
 import { HttpClientExampleModule } from './modules/http-client-example/http-client-example.module';
 import { NavigationModule } from './modules/navigation/navigation.module';
 import { OverviewModule } from './modules/overview/overview.module';
+import { counterReducer } from './modules/store-example/counter.reducer';
+import { StoreExampleModule } from './modules/store-example/store-example.module';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,14 @@ import { OverviewModule } from './modules/overview/overview.module';
     NavigationModule,
     DataModule,
     AngularFireModule.initializeApp(environment.firebase),
+    StoreModule.forRoot({ count: counterReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    }),
     AdminModule,
     DetailModule,
-    HttpClientExampleModule
+    HttpClientExampleModule,
+    StoreExampleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

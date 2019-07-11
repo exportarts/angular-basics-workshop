@@ -6,6 +6,7 @@ import { DetailViewResolver } from './modules/detail/resolvers/detail-view.resol
 import { DetailComponent } from './modules/detail/views/detail/detail.component';
 import { HttpClientExampleComponent } from './modules/http-client-example/views/http-client-example/http-client-example.component';
 import { OverviewComponent } from './modules/overview/views/overview/overview.component';
+import { CounterExampleComponent } from './modules/store-example/components/counter-example/counter-example.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'http-client-example',
     component: HttpClientExampleComponent
+  },
+  {
+    path: 'store-example',
+    component: CounterExampleComponent
   },
   {
     path: '**',

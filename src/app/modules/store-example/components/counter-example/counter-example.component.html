@@ -1,0 +1,12 @@
+<section class="container">
+    <div class="row">
+      <div class="col">
+        <strong class="d-block mb-3">Current Count: {{ count$ | async }}</strong>
+        <button class="btn btn-sm btn-primary mr-1" (click)="increment()">Increment</button>
+        <button class="btn btn-sm btn-secondary mr-1" (click)="decrement()">Decrement</button>
+        <button class="btn btn-sm btn-outline-primary mr-1" (click)="double()">Double</button>
+        <button class="btn btn-sm btn-outline-secondary mr-4" (click)="half()">Half</button>
+        <button class="btn btn-sm btn-danger" (click)="reset()" [disabled]="(count$ | async) === 0">Reset Counter</button>
+      </div>
+    </div>
+</section>
